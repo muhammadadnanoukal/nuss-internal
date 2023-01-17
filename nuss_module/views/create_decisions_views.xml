@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='create_decisions_new_view_form' model='ir.ui.view'>
+        <field name="name">create.decisions.new.view.form</field>
+        <field name="model">create.decisions.new</field>
+        <field name="arch" type="xml">
+            <form string="أنواع قرارات">
+                <sheet>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>إنشاء أنواع قرارات</h4>
+                        </span>
+                        <field name="name" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='create_decisions_new_view_tree' model='ir.ui.view'>
+        <field name="name">create.decisions.new.view.tree</field>
+        <field name="model">create.decisions.new</field>
+        <field name="arch" type="xml">
+            <tree string="أنواع قرارات">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_decisions_new_main_menu_action" model="ir.actions.act_window">
+        <field name="name">أنواع قرارات</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.decisions.new</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Decision!
+            </p>
+        </field>
+    </record>
+
+    <record id="hr_employee_smart_button_form_2_inhe_form" model="ir.ui.view">
+        <field name="name">hr.employee.smart.button.view.form.2.inhe.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_specific_decisions" type="object" class="oe_stat_button" string="قرارات" />
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="create_decisions_menu"
+              name="أنواع قرارات"
+              action="create_decisions_new_main_menu_action"
+              parent="decisions_templates_root_menu"
+              sequence="5"/>
+</odoo>

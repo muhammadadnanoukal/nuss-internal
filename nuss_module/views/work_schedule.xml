@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='work_schedule_view_form' model='ir.ui.view'>
+        <field name="name">work.schedule.view.form</field>
+        <field name="model">work.schedule</field>
+        <field name="arch" type="xml">
+            <form string="جدول الأعمال">
+                <header>
+                    <field name="is_next_stage" invisible="1"/>
+                    <button name="create_next_stage" class="btn-primary" string="محضر جلسة"
+                            type="object" context="{'default_date': date,
+                            'default_political_side': political_side,
+                            'default_parent_form_id': active_id,
+                            'default_organization_and_qualification': organization_and_qualification,
+                            'default_higher_education_and_student_issues': higher_education_and_student_issues,
+                            'default_special_education': special_education,
+                            'default_culture_and_arts': culture_and_arts,
+                            'default_sports': sports,
+                            'default_the_outer_branches': the_outer_branches,
+                            'default_technical_education': technical_education,
+                            'default_media_and_informatics': media_and_informatics,
+                            'default_volunteer_work_and_social_activities': volunteer_work_and_social_activities,
+                            'default_foreign_relations': foreign_relations,
+                            'default_new_role': new_role,
+                            'default_is_next_stage': is_next_stage,
+                            }" data-hotkey="q" attrs="{'invisible': [('is_next_stage', '!=', False)]}"/>
+                </header>
+                <sheet>
+
+                    <div class="oe_button_box" name="button_box">
+                        <field name="is_next_stage" invisible="1"/>
+                        <button name="action_view_next_stage"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-pencil-square-o"
+                                attrs="{'invisible': [('is_next_stage', '=', False)]}">
+                            <span>محضر جلسة</span>
+                        </button>
+                    </div>
+                    <sheet>
+                        <div class="oe_title">
+                                <span class="o_form_label o_hr_form_label">
+                                    <h3> جدول الأعمال</h3>
+                                </span>
+                            <h3>
+                                <field name="name" width="100%" style="border: 1px solid #c5c3bd ;"/>
+                            </h3>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <span class="o_form_label o_hr_form_label">
+                                    <h1>العنوان</h1>
+                                </span>
+                                <field name="title" width="100%" style="border: 1px solid #c5c3bd ;"/>
+                            </h1>
+                        </div>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h2>التاريخ</h2>
+                            </span>
+                            <field name="date" width="100%" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>الجانب السياسي</h4>
+                            </span>
+                            <field name="political_side" width="100%" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب التنظيم و التأهيل</h4>
+                            </span>
+                            <field name="organization_and_qualification" width="100%"
+                                   style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب التعليم العالي وقضايا الطلبة</h4>
+                            </span>
+                            <field name="higher_education_and_student_issues" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب التعليم الخاص</h4>
+                            </span>
+                            <field name="special_education" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب الثقافة والفنون</h4>
+                            </span>
+                            <field name="culture_and_arts" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب الرياضة</h4>
+                            </span>
+                            <field name="sports" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب الفروع الخارجية</h4>
+                            </span>
+                            <field name="the_outer_branches" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب التعليم التقاني</h4>
+                            </span>
+                            <field name="technical_education" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب الاعلام والمعلوماتية</h4>
+                            </span>
+                            <field name="media_and_informatics" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب العمل التطوعي و الأنشطة الإجتماعية</h4>
+                            </span>
+                            <field name="volunteer_work_and_social_activities" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>جانب العلاقات الخارجية</h4>
+                            </span>
+                            <field name="foreign_relations" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                        <![CDATA[&nbsp;]]>
+                        <div>
+                            <span class="o_form_label o_hr_form_label">
+                                <h4>ما يستجد من أمور</h4>
+                            </span>
+                            <field name="new_role" style="border: 1px solid #c5c3bd ;"/>
+                        </div>
+                    </sheet>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='work_schedule_view_tree' model='ir.ui.view'>
+        <field name="name">work.schedule.view.tree</field>
+        <field name="model">work.schedule</field>
+        <field name="arch" type="xml">
+            <tree string="جدول الأعمال">
+                <field name="title"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

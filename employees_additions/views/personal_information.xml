@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_personal_information_form" model="ir.ui.view">
+        <field name="name">personal_information_form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='country_id']" position="before">
+                <!--                <field name="id_number"/>-->
+                <field name="National_number"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="father_name"/>
+                <!--                <field name="sex"/>-->
+                <!--                <field name="dateOfBirth"/>-->
+                <field name="alAmaneh"/>
+                <field name="mkanAlKied"/>
+                <field name="raamAlkhana"/>
+                <field name="husbendsWork"/>
+                <field name="languages" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_personal_information_form_2" model="ir.ui.view">
+        <field name="name">personal_information_form.inherit_1</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='certificate']" position="before">
+                <field name="educationalCertificates"/>
+            </xpath>
+            <xpath expr="//field[@name='certificate']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='study_field']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='study_school']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_personal_information_form_9" model="ir.ui.view">
+        <field name="name">personal_information_form.inherit_9</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_type']" position="attributes">
+                <attribute name="string">نوع المورد البشري</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr.menu_view_hr_contract_type" model="ir.ui.menu">
+        <field name="name">نوع المورد البشري</field>
+    </record>
+
+    <record id="view_personal_information_form_3" model="ir.ui.view">
+        <field name="name">personal_information_form.inherit_2</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='children']" position="after">
+                <field name="childrenNum"/>
+                <field name="child_sex_1" attrs="{'invisible': [('childrenNum', '&lt;', 1)]}"/>
+                <field name="child_birth_Date_1" attrs="{'invisible': [('childrenNum', '&lt;', 1)]}"/>
+                <field name="child_sex_2" attrs="{'invisible': [('childrenNum', '&lt;', 2)]}"/>
+                <field name="child_birth_Date_2" attrs="{'invisible': [('childrenNum', '&lt;', 2)]}"/>
+                <field name="child_sex_3" attrs="{'invisible': [('childrenNum', '&lt;', 3)]}"/>
+                <field name="child_birth_Date_3" attrs="{'invisible': [('childrenNum', '&lt;', 3)]}"/>
+                <field name="child_sex_4" attrs="{'invisible': [('childrenNum', '&lt;', 4)]}"/>
+                <field name="child_birth_Date_4" attrs="{'invisible': [('childrenNum', '&lt;', 4)]}"/>
+                <field name="child_sex_5" attrs="{'invisible': [('childrenNum', '&lt;', 5)]}"/>
+                <field name="child_birth_Date_5" attrs="{'invisible': [('childrenNum', '&lt;', 5)]}"/>
+                <field name="child_sex_6" attrs="{'invisible': [('childrenNum', '&lt;', 6)]}"/>
+                <field name="child_birth_Date_6" attrs="{'invisible': [('childrenNum', '&lt;', 6)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='children']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hr_employee_smart_button_form_1_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.smart.button.view.form.1.planning</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_administrative_orders" type="object" class="oe_stat_button" string="أوامر ادارية"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

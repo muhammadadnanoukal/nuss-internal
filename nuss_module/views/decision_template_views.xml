@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='decision_template_form' model='ir.ui.view'>
+        <field name="name">decision.template.form</field>
+        <field name="model">decision.template</field>
+        <field name="arch" type="xml">
+            <form string="نماذج القرارات">
+                <sheet>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                                 <h4>العنوان</h4>
+                            <h4>
+                                <field name="name" style="border: 1px solid #c5c3bd ;"/>
+                            </h4>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>النوع</h4>
+                        </span>
+                        <field name="decision_type" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>المحتوى</h4>
+                        </span>
+                        <field name="content" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='decision_template_tree' model='ir.ui.view'>
+        <field name="name">decision.template.tree</field>
+        <field name="model">decision.template</field>
+        <field name="arch" type="xml">
+            <tree string="نموذج القرار">
+                <field name="name"/>
+                <field name="decision_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_decision_template_menu" model="ir.actions.act_window">
+        <field name="name">نموذج القرار</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">decision.template</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Decision Template!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="nuss_root_menu"
+              name="NUSS"
+              sequence="1"/>
+
+    <menuitem id="decisions_templates_root_menu"
+              name="النماذج والقرارات"
+              parent="nuss_module.nuss_root_menu"
+              sequence="2"/>
+
+    <menuitem id="stages_root_menu"
+              name="الجلسات"
+              parent="nuss_module.nuss_root_menu"
+              sequence="3"/>
+
+    <menuitem id="decision_template_menu"
+              name="نماذج القرارات"
+              action="action_decision_template_menu"
+              parent="nuss_module.decisions_templates_root_menu"
+              sequence="4"/>
+
+    <record id="action_specific_employees" model="ir.actions.act_window">
+        <field name="name">اسماء الحاضرين</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">specific.employees</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Work Decision!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="specific_employees_menu"
+              name="أسماء الحاضرين"
+              action="action_specific_employees"
+              parent="stages_root_menu"
+              sequence="8"/>
+
+    <record id="action_work_schedule" model="ir.actions.act_window">
+        <field name="name">جداول الأعمال</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.schedule</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Work Schedule!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="work_schedule_menu"
+              name="جداول الأعمال"
+              action="action_work_schedule"
+              parent="stages_root_menu"
+              sequence="6"/>
+
+    <record id="action_work_schedule_stage" model="ir.actions.act_window">
+        <field name="name">ملخص الجلسة</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">work.schedule.stage</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Work Schedule!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="work_schedule_stage_menu"
+              name="ملخص الجلسة"
+              action="action_work_schedule_stage"
+              parent="stages_root_menu"
+              sequence="7"/>
+
+</odoo>
+
+
+

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='decision_details_form' model='ir.ui.view'>
+        <field name="name">decision.details.form</field>
+        <field name="model">decision.details</field>
+        <field name="arch" type="xml">
+            <form string="القرارات">
+                <sheet col="1">
+                    <div class="oe_title">
+                        <h3>
+                            <field name="name" readonly="1"/>
+                        </h3>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>التاريخ</h4>
+                        </span>
+                        <field name="date" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>النوع</h4>
+                        </span>
+                        <field name="decision_type" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>المكتب التنفيذي بحلسته : </h4>
+                        </span>
+                        <field name="details" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>نوع القرار : </h4>
+                        </span>
+                        <field name="type_of_decision" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>تحميل القرار</h4>
+                        </span>
+                        <field name="upload_file" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>محتوى القرار</h4>
+                        </span>
+                        <field name="contents" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>صاحب العلاقة :</h4>
+                        </span>
+                        <field name="owner_of_the_relationship" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>صورة إلى :</h4>
+                        </span>
+                        <field name="second" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <field name="third" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <field name="forth" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <field name="fifth" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <field name="sixth" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                    <div>
+                        <field name="seventh" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <![CDATA[&nbsp;]]>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='decision_details_tree' model='ir.ui.view'>
+        <field name="name">decision.details.tree</field>
+        <field name="model">decision.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="type_of_decision"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="decision_details_menu_action" model="ir.actions.act_window">
+        <field name="name">القرارات</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">decision.details</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Decision!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="decision_details_menu"
+              name="القرارات"
+              action="decision_details_menu_action"
+              parent="decisions_templates_root_menu"
+              sequence="5"/>
+
+
+
+</odoo>
+

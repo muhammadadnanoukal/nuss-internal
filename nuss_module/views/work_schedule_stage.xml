@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='work_schedule_stage_view_form' model='ir.ui.view'>
+        <field name="name">work.schedule.stage.view.form</field>
+        <field name="model">work.schedule.stage</field>
+        <field name="arch" type="xml">
+            <form string="ملخص الجلسة">
+                <sheet>
+                <div class="oe_title">
+                        <h1>
+                            <field name="name_current" attrs="{'invisible': [('record_type', '=', 'type_2')]}" readonly="1"/>
+                        </h1>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" attrs="{'invisible': [('record_type', '=', 'type_1')]}" readonly="1"/>
+                        </h1>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>نوع المحضر</h4>
+                        </span>
+                        <field name="record_type" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h2>رئيس الجلسة</h2>
+                        </span>
+                        <field name="headed" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>الحاضرون ضمن الجلسة</h3>
+                        </span>
+                        <field name="present" widget="many2many_tags" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>تغيب بعذر كل من الزملاء</h3>
+                        </span>
+                        <field name="leave_with_an_excuse" widget="many2many_tags" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>تغيب بدون عذر كل من الزملاء</h3>
+                        </span>
+                        <field name="leave_without_an_excuse" widget="many2many_tags" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>التاريخ</h3>
+                        </span>
+                        <field name="date" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>الجانب السياسي</h4>
+                        </span>
+                        <field name="political_side" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب التنظيم و التأهيل</h4>
+                        </span>
+                        <field name="organization_and_qualification" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>
+                                القرارات
+                            </h4>
+                        </span>
+                        <field name="linked_fields" widget="many2many_tags" style="border: 1px solid #c5c3bd ;">
+                            <tree
+                                    string="Sales Order Lines"
+                                    editable="bottom">
+                                <field name="decision_type" />
+                            </tree>
+                            {'group_by':['id', 'contents']}
+                        </field>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                        </span>
+                        <field name="new_field" multiple="true" force_save="1"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب التعليم العالي وقضايا الطلبة</h4>
+                        </span>
+                        <field name="higher_education_and_student_issues" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب التعليم الخاص</h4>
+                        </span>
+                        <field name="special_education" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب الثقافة والفنون</h4>
+                        </span>
+                        <field name="culture_and_arts" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب الرياضة</h4>
+                        </span>
+                        <field name="sports" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب الفروع الخارجية</h4>
+                        </span>
+                        <field name="the_outer_branches" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب التعليم التقاني</h4>
+                        </span>
+                        <field name="technical_education" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب الاعلام والمعلوماتية</h4>
+                        </span>
+                        <field name="media_and_informatics" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب العمل التطوعي و الأنشطة الإجتماعية</h4>
+                        </span>
+                        <field name="volunteer_work_and_social_activities" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>جانب العلاقات الخارجية</h4>
+                        </span>
+                        <field name="foreign_relations" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h4>ما يستجد من أمور</h4>
+                        </span>
+                        <field name="new_role" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='work_schedule_stage_view_tree' model='ir.ui.view'>
+        <field name="name">work.schedule.stage.view.tree</field>
+        <field name="model">work.schedule.stage</field>
+        <field name="arch" type="xml">
+            <tree string="ملخص الجلسة">
+                <field name="name" readonly="1"/>
+                <field name="headed"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

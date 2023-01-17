@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='administrative_orders_form' model='ir.ui.view'>
+        <field name="name">administrative.orders.form</field>
+        <field name="model">administrative.orders</field>
+        <field name="arch" type="xml">
+            <form string="الاوامر الادارية">
+                <sheet>
+                    <div class="oe_title">
+                        <span class="o_form_label o_hr_form_label">
+                            <h1>اوامر إدارية</h1>
+                        </span>
+                        <h2>
+                            <field name="title" style="border: 1px solid #c5c3bd ;"/>
+                        </h2>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>المورد البشري</h3>
+                        </span>
+                        <field name="employee" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+<!--                    <div>-->
+<!--                        <field name="linked_employee_field" style="border: 1px solid #c5c3bd ;"/>-->
+<!--                    </div>-->
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>التاريخ</h3>
+                        </span>
+                        <field name="date" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>امر اداري</h3>
+                        </span>
+                        <field name="decision_type" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>المحتوى</h3>
+                        </span>
+                        <field name="contents" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='administrative_orders_view_tree' model='ir.ui.view'>
+        <field name="name">administrative.orders.view.tree</field>
+        <field name="model">administrative.orders</field>
+        <field name="arch" type="xml">
+            <tree string="الاوامر الادارية">
+                <field name="title"/>
+                <field name="employee"/>
+                <field name="decision_type"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_administrative_orders" model="ir.actions.act_window">
+        <field name="name">الاوامر الادارية</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">administrative.orders</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <menuitem
+            id="menu_administrative_orders_admin_employee"
+            name="الاوامر الادارية"
+            parent="hr.menu_hr_employee_payroll"
+            action="action_administrative_orders"
+    />
+
+</odoo>
+

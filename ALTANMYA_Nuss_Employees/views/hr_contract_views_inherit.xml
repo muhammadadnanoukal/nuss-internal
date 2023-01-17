@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr_contract_view_inherit_nuss_form" model="ir.ui.view">
+            <field name="name">hr.contract.form.nuss.inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='wage'][1]" position="after">
+                    <label for="acting_indemnity"/>
+                    <div class="o_row mw-50" name="acting_indemnity">
+                        <field name="acting_indemnity" class="oe_inline o_hr_narrow_field" nolabel="1"/>
+                        <div class="mb-3">/ month</div>
+                    </div>
+                    <label for="retirement_salary_difference"/>
+                    <div class="o_row mw-50" name="retirement_salary_difference">
+                        <field name="retirement_salary_difference" class="oe_inline o_hr_narrow_field" nolabel="1"/>
+                        <div class="mb-3">/ month</div>
+                    </div>
+                    <label for="empty_indemnity"/>
+                    <div class="o_row mw-50" name="empty_indemnity">
+                        <field name="empty_indemnity" class="oe_inline o_hr_narrow_field" nolabel="1"/>
+                        <div class="mb-3">/ month</div>
+                    </div>
+                    <label for="responsibility_indemnity"/>
+                    <div class="o_row mw-50" name="responsibility_indemnity">
+                        <field name="responsibility_indemnity" class="oe_inline o_hr_narrow_field" nolabel="1"/>
+                        <div class="mb-3">/ month</div>
+                    </div>
+                    <label for="move_indemnity"/>
+                    <div class="o_row mw-50" name="move_indemnity">
+                        <field name="move_indemnity" class="oe_inline o_hr_narrow_field" nolabel="1"/>
+                        <div class="mb-3">/ month</div>
+                    </div>
+                    <label for="internet_indemnity"/>
+                    <div class="o_row mw-50" name="internet_indemnity">
+                        <field name="internet_indemnity" class="oe_inline o_hr_narrow_field" nolabel="1"/>
+                        <div class="mb-3">/ month</div>
+                    </div>
+<!--                    <label for="health_assurance"/>-->
+                    <!--                    <div class="o_row mw-50" name="health_assurance">-->
+                    <field name="health_assurance"/>
+                    <!--                    </div>-->
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

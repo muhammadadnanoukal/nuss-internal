@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_11" model="ir.ui.view">
+        <field name="name">hr.employee.form11</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[5]" position='after'>
+                <page string='القياديين' attrs="{'invisible': [('employee_type', '!=', 'trainee')]}">
+                    <group>
+                        <group>
+                            <field name="mission" widget="many2many_tags"></field>
+                        </group>
+                        <group>
+                            <field name="responsibility" widget="many2many_tags"></field>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

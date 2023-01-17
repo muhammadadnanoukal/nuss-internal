@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequences for work.decision -->
+        <record id="seq_work_schedule_stage_type_1" model="ir.sequence">
+            <field name="name">Work Schedule Stage Type 1</field>
+            <field name="code">work.schedule.stage.type_1</field>
+            <field name="prefix">رقم:</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_work_schedule_stage_type_2" model="ir.sequence">
+            <field name="name">Work Schedule Stage Type 2</field>
+            <field name="code">work.schedule.stage.type_2</field>
+            <field name="prefix">رقم:</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="decision_form_seq" model="ir.sequence">
+            <field name="name">Decision</field>
+            <field name="code">kalb.kalb</field>
+            <field name="prefix">قرار رقم:</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="schedule_form_seq" model="ir.sequence">
+            <field name="name">جدول أعمال</field>
+            <field name="code">sch.sch</field>
+            <field name="prefix">رقم:</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

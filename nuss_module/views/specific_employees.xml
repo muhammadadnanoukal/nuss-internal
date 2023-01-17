@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='model_specific_employees_form' model='ir.ui.view'>
+        <field name="name">model.specific.employees.form</field>
+        <field name="model">specific.employees</field>
+        <field name="arch" type="xml">
+            <form string="اسماء الحاضرين">
+                <sheet>
+                        <span class="o_form_label o_hr_form_label">
+                            <h1>اسماء الحاضرين ضمن الجلسة</h1>
+                        </span>
+                        <h2>
+                            <field name="name" style="border: 1px solid #c5c3bd ;"/>
+                        </h2>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='model_specific_employees_tree' model='ir.ui.view'>
+        <field name="name">model.specific.employees.tree</field>
+        <field name="model">specific.employees</field>
+        <field name="arch" type="xml">
+            <tree string="اسماء الحاضرين">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
+

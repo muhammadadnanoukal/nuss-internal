@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='followed_courses_form' model='ir.ui.view'>
+        <field name="name">followed.courses.form</field>
+        <field name="model">followed.courses</field>
+        <field name="arch" type="xml">
+            <form string="الدورات المتبعة">
+                <sheet>
+                    <div class="oe_title">
+                        <span class="o_form_label o_hr_form_label">
+                            <h1>الدورات المتبعة</h1>
+                        </span>
+                        <h2>
+                            <field name="title" style="border: 1px solid #c5c3bd ;"/>
+                        </h2>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>المورد البشري</h3>
+                        </span>
+                        <field name="employee" widget='many2many_tags' style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+<!--                    <div>-->
+<!--                        <field name="linked_employee_field" style="border: 1px solid #c5c3bd ;"/>-->
+<!--                    </div>-->
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>التاريخ</h3>
+                        </span>
+                        <field name="date" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                    <div>
+                        <span class="o_form_label o_hr_form_label">
+                            <h3>رفع ملف</h3>
+                        </span>
+                        <field name="file" style="border: 1px solid #c5c3bd ;"/>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id='followed_courses_view_tree' model='ir.ui.view'>
+        <field name="name">followed.courses.view.tree</field>
+        <field name="model">followed.courses</field>
+        <field name="arch" type="xml">
+            <tree string="الدورات المتبعة">
+                <field name="title"/>
+                <field name="employee"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_followed_courses" model="ir.actions.act_window">
+        <field name="name">الدورات المتبعة</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">followed.courses</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <menuitem
+            id="menu_followed_courses_admin_employee"
+            name="الدورات المتبعة"
+            parent="hr.menu_hr_employee_payroll"
+            action="action_followed_courses"
+    />
+
+</odoo>
+

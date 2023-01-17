@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+work_schedule,work.schedule,model_work_schedule,base.group_user,1,1,1,1
+work_schedule_stage,work.schedule.stage,model_work_schedule_stage,base.group_user,1,1,1,1
+decision_template,decision.template,model_decision_template,base.group_user,1,1,1,1
+decision_details,decision.details,model_decision_details,base.group_user,1,1,1,1
+specific_employees,specific.employees,model_specific_employees,base.group_user,1,1,1,1
+create_decisions_new,create.decisions.new,model_create_decisions_new,base.group_user,1,1,1,1
+specific_decisions_same,specific.decisions.same,model_specific_decisions_same,base.group_user,1,1,1,1
