@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+responsibility_employee,responsibility.employee,model_responsibility_employee,base.group_user,1,1,1,1
+generalizations_employee,generalizations.employee,model_generalizations_employee,base.group_user,1,1,1,1
+administrative_orders,administrative.orders,model_administrative_orders,base.group_user,1,1,1,1
+followed_courses,followed.courses,model_followed_courses,base.group_user,1,1,1,1
+specific_orders,specific.orders,model_specific_orders,base.group_user,1,1,1,1
+mission_employee,mission.employee,model_mission_employee,base.group_user,1,1,1,1
+,,,,,,,

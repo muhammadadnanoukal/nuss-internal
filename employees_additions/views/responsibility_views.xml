@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='responsibility_employee_new_id_for_form' model='ir.ui.view'>
+        <field name="name">responsibility.employee.new.form</field>
+        <field name="model">responsibility.employee</field>
+        <field name="arch" type="xml">
+            <form string="المسؤولية">
+                <sheet>
+                    <span class="o_form_label o_hr_form_label">
+                        <h1>المسؤولية</h1>
+                    </span>
+                    <h2>
+                        <field name="name" style="border: 1px solid #c5c3bd ;"/>
+                    </h2>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='administrative_employee_new_orders_view_tree' model='ir.ui.view'>
+        <field name="name">responsibility.employee.new.view.tree</field>
+        <field name="model">responsibility.employee</field>
+        <field name="arch" type="xml">
+            <tree string="المسؤولية">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_responsibility_employee_new_id" model="ir.actions.act_window">
+        <field name="name">المسؤولية</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">responsibility.employee</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Your First Work Decision!
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_responsibility_admin_new_employee"
+            name="المسؤولية"
+            parent="hr.menu_config_recruitment"
+            action="action_responsibility_employee_new_id"
+            sequence="8"/>
+
+</odoo>
+
